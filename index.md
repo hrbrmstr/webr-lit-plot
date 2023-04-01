@@ -128,10 +128,6 @@ I'll blather a bit further when you get to the two-dimensional charts.
 
 <ojs-shorthand-plot chartTitle="DotX Mark"  id="dotX"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="Line Mark"  id="line"></ojs-shorthand-plot>
-
-<ojs-shorthand-plot chartTitle="Dot Mark"   id="dot"></ojs-shorthand-plot>
-
 That `timeSeries` variable is fed into the Line and Dot mark plots. It's also really short:
 
 ```js

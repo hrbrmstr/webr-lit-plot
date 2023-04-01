@@ -1,6 +1,7 @@
 import './status-message.js'
 import './obs-shorthand-plot.js'
 import './double-display.js'
+
 import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
 
 let webrMessage = document.getElementById("webr-status");
@@ -71,5 +72,5 @@ apple_data <- c(170.16, 172.53, 172.54, 173.44, 174.35, 174.55, 173.16, 174.59, 
 
 };
 
-// just like 💎, this is forever
-setInterval(randoCharts, 1000);
+// just like 💎, this is forever, until we stop it
+const interval = setInterval(randoCharts, 1000);
