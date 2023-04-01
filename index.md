@@ -49,7 +49,7 @@ Experiment parameters:
 - Vite (for building)
 - hrbrmstr's lame CSS skills
 
-Some data, courtesy of `runif()`:
+Some data, courtesy of a sad little R function that mangles the data from the the Observable Plot example:
 
 <double-display id="r-doublres"></double-display>
 
