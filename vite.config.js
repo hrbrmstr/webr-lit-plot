@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import topLevelAwait from "vite-plugin-top-level-await";
 import webfontDownload from 'vite-plugin-webfont-dl';
+import urlResolve from 'rollup-plugin-url-resolve';
+import terser from '@rollup/plugin-terser';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,8 +13,14 @@ export default defineConfig({
       // entry: 'src/main.js',
       formats: ['es'],
     },
-    rollupOptions: {
-      // external: /^lit/,
+		rollupOptions: {
+			plugins: [
+				terser(),
+				urlResolve({
+					cacheManager: '.cache',
+					minify: true,
+				})
+			]
 		},
 	},
 	plugins: [
