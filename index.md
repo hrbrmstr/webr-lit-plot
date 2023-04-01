@@ -147,4 +147,6 @@ The component is really misnamed since you can use any OBS Plot in it, but I or 
 
 Even if we get speedier {ggplot2} load times, I think it'd be good for R folks to take Observable Plot for a spin in JS-land, and consider leaning _heavily_ on it for displaying most fundamental charts.
 
+You can find the source [on GitHub](https://github.com/hrbrmstr/webr-lit-plot).
+
 <p style="text-align: center">Brought to you by @hrbrmstr</p>
