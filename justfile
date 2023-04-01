@@ -2,7 +2,7 @@
 # Good cheatsheet (https://cheatography.com/linux-china/cheat-sheets/justfile/)
 
 # project dir
-project := "vite-webr-lit"
+project := "something-bigger-and-better"
 	
 # where to sync ./build
 syncDest := "rud.is:~/rud.is/w/" + project + "/"
@@ -21,7 +21,7 @@ render:
 
 # compile the app
 build:
-  npm run build
+  npm run build -- --base /w/{{project}}/
 
 # sync to server
 rsync:

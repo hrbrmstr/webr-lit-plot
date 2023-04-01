@@ -3,7 +3,7 @@ import topLevelAwait from "vite-plugin-top-level-await";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: '/w/vite-webr-lit/', // change me for your deployment
+	base: '/',
   build: {
 		lib: {
 			entry: 'index.html',
