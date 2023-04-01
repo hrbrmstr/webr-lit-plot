@@ -1,6 +1,5 @@
 import { LitElement, css, html } from 'lit'
 import { when } from 'lit/directives/when.js';
-import { unsafeHTML } from "lit/directives/unsafe-html.js";
 
 const inspect = false
 
@@ -8,7 +7,7 @@ export class OBSShorthandPlot extends LitElement {
 
 	static properties = {
 		id: { type: String },
-		title: { type: String },
+		chartTitle: { type: String },
 		chart: { type: Object },
 		style: { type: Object }
 	};
@@ -17,6 +16,7 @@ export class OBSShorthandPlot extends LitElement {
 
 		super()
 
+		// pesky Plot SVG background compensation
 		const style = getComputedStyle(document.documentElement);
 		const foreground = style.getPropertyValue('--foreground-color');
 		const background = style.getPropertyValue('--background-color');
@@ -26,13 +26,12 @@ export class OBSShorthandPlot extends LitElement {
 			color: foreground
 		}
 
-		this.title = ''
 		this.chart = null
 		this.style = baseStyle
 
 		this.addEventListener('chartUpdated', (e) => {
 			inspect && console.log("connectedCallback event listener")
-			this.title = e.detail.value.title;
+			this.chartTitle = e.detail.value.chartTitle;
 			this.chart = e.detail.value.chart;
 			this.style = e.detail.value.style;
 		});
@@ -48,7 +47,7 @@ export class OBSShorthandPlot extends LitElement {
 		return when(this.chart === null,
 			() => html`<div style="color: ${foreground}"><slot></slot></div>`,
 			() => html`<div style="color: ${foreground}">
-			<h3>${this.title}</h3>
+			<h3>${this.chartTitle}</h3>
 			${this.chart.plot({ style: this.style })}
 			<slot></slot>
 			</div>`
@@ -70,7 +69,7 @@ export class OBSShorthandPlot extends LitElement {
 		const options = {
 			detail: {
 				value: {
-					title: this.title,
+					chartTitle: this.chartTitle,
 					chart: this.chart,
 					style: this.style
 				}

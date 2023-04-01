@@ -10,10 +10,13 @@ import './r.js'
 
 webrMessage.text = "WebR Loaded!"
 
+// the theme defaults to system dark/light mode so we do this to try to 
+// ensure the plots are readable regardless of choice
 const style = getComputedStyle(document.documentElement);
 const foreground = style.getPropertyValue('--foreground-color');
 const background = style.getPropertyValue('--background-color');
 
+// identify all the plot components
 const chart1 = document.querySelector('#c1');
 const chart2 = document.querySelector('#c2');
 const chart3 = document.querySelector('#c3');
@@ -23,6 +26,7 @@ const chart6 = document.querySelector('#c6');
 const chart7 = document.querySelector('#c7');
 const chart8 = document.querySelector('#c8');
 
+// setup some different colors
 chart2.style = { backgroundColor: background, color: "#3a579a" }
 chart3.style = { backgroundColor: background, color: "#7e2453" }
 chart4.style = { backgroundColor: background, color: "#008751" }
@@ -31,12 +35,14 @@ chart6.style = { backgroundColor: background, color: "#5f574e" }
 chart7.style = { backgroundColor: background, color: "#c2c3c7" }
 chart8.style = { backgroundColor: background, color: "#ffa300" }
 
+// find our number output areas\
 const doubleRes = document.querySelector('#r-doublres');
 
 // we'll let R make the dates for us, mostly
 const rDates = await R`as.character(seq.Date(as.Date("2018-01-02"), as.Date("2018-02-28"), "1 day"))`
 const dateArray = rDates.map(d => new Date(d))
 
+// go rando!
 async function randoCharts() {
 
 	const numbers = await R`runif(40, 150, 180)`
@@ -59,4 +65,5 @@ async function randoCharts() {
 
 };
 
+// just like 💎, this is forever
 setInterval(randoCharts, 1000);
