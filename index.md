@@ -131,6 +131,8 @@ chart7.chart = Plot.line(timeSeries)
 chart8.chart = Plot.dot(timeSeries)
 ```
 
+Notice how it handles the date scale on the X axis. You can [read more about that](https://observablehq.com/@observablehq/plot-shorthand#cell-478) in the original notebook.
+
 <ojs-shorthand-plot chartTitle="Line Mark" id="c7"></ojs-shorthand-plot>
 
 <ojs-shorthand-plot chartTitle="Dot Mark" id="c8"></ojs-shorthand-plot>
