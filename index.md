@@ -103,11 +103,11 @@ If you look in `main.js`, you'll see how short the calls to Plot are:
 
 ```js
 cellXchart.chart = Plot.cellX(numbers)
-boxXchart.chart = Plot.boxX(numbers)
+boxXchart.chart  = Plot.boxX(numbers)
 lineYchart.chart = Plot.lineY(numbers)
 areaYchart.chart = Plot.areaY(numbers, {})
 rectYchart.chart = Plot.rectY(numbers)
-dotXchart.chart = Plot.dotX(numbers)
+dotXchart.chart  = Plot.dotX(numbers)
 ```
 
 Sure, I tweaked the colors a bit, but that's also not verbose:
