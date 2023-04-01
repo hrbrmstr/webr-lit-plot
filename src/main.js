@@ -19,22 +19,22 @@ const background = style.getPropertyValue('--background-color');
 
 // identify all the plot components
 const cellXchart = document.querySelector('#cellX');
-const boxXchart = document.querySelector('#boxX');
+const boxXchart  = document.querySelector('#boxX');
 const lineYchart = document.querySelector('#lineY');
 const areaYchart = document.querySelector('#areaY');
 const rectYchart = document.querySelector('#rectY');
-const dotXchart = document.querySelector('#dotX');
-const lineChart = document.querySelector('#line');
-const dotChart = document.querySelector('#dot');
+const dotXchart  = document.querySelector('#dotX');
+const lineChart  = document.querySelector('#line');
+const dotChart   = document.querySelector('#dot');
 
 // setup some different colors
-boxXchart.style = { backgroundColor: background, color: "#3a579a" }
+boxXchart.style  = { backgroundColor: background, color: "#3a579a" }
 lineYchart.style = { backgroundColor: background, color: "#7e2453" }
 areaYchart.style = { backgroundColor: background, color: "#008751" }
 rectYchart.style = { backgroundColor: background, color: "#ff004d" }
-dotXchart.style = { backgroundColor: background, color: "#5f574e" }
-lineChart.style = { backgroundColor: background, color: "#c2c3c7" }
-dotChart.style = { backgroundColor: background, color: "#ffa300" }
+dotXchart.style  = { backgroundColor: background, color: "#5f574e" }
+lineChart.style  = { backgroundColor: background, color: "#c2c3c7" }
+dotChart.style   = { backgroundColor: background, color: "#ffa300" }
 
 // find our number output areas
 const doubleRes = document.querySelector('#r-doublres');
@@ -57,11 +57,11 @@ apple_data + rnorm(length(apple_data), mean = 0, sd = 2)
 	doubleRes.results = numbers
 
 	cellXchart.chart = Plot.cellX(numbers)
-	boxXchart.chart = Plot.boxX(numbers)
+	boxXchart.chart  = Plot.boxX(numbers)
 	lineYchart.chart = Plot.lineY(numbers)
 	areaYchart.chart = Plot.areaY(numbers, {})
 	rectYchart.chart = Plot.rectY(numbers)
-	dotXchart.chart = Plot.dotX(numbers)
+	dotXchart.chart  = Plot.dotX(numbers)
 
 	const timeSeries = numbers.map((d, i) => {
 		return [ dateArray[i], d ]
