@@ -118,15 +118,19 @@ chart2.style = { backgroundColor: background, color: "#3a579a" }
 
 I'll blather a bit further when you get to the two-dimensional charts.
 
-<ojs-shorthand-plot chartTitle="LineY Mark" id="c6"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="BoxX Mark"  id="c2"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="AreaY Mark" id="c2"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="LineY Mark" id="c3"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="RectY Mark" id="c3"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="AreaY Mark" id="c4"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="DotX Mark" id="c4"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="RectY Mark" id="c5"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="BoxX Mark" id="c5"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="DotX Mark"  id="c6"></ojs-shorthand-plot>
+
+<ojs-shorthand-plot chartTitle="Line Mark"  id="c7"></ojs-shorthand-plot>
+
+<ojs-shorthand-plot chartTitle="Dot Mark"   id="c8"></ojs-shorthand-plot>
 
 That `timeSeries` variable is fed into the Line and Dot mark plots. It's also really short:
 
