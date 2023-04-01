@@ -35,7 +35,7 @@ dotXchart.style = { backgroundColor: background, color: "#5f574e" }
 lineChart.style = { backgroundColor: background, color: "#c2c3c7" }
 dotChart.style = { backgroundColor: background, color: "#ffa300" }
 
-// find our number output areas\
+// find our number output areas
 const doubleRes = document.querySelector('#r-doublres');
 
 // we'll let R make the dates for us, mostly
