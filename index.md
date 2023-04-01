@@ -55,7 +55,7 @@ Some data, courtesy of a sad little R function that mangles the data from the th
 
 <ojs-shorthand-plot chartTitle="CellX Mark" id="cellX"></ojs-shorthand-plot>
 
-[Observable Plot](https://observablehq.com/collection/@observablehq/plot) specifications can be just as involved and complex as the most bespoke {ggplot2} plots in R. OBS Plot still has a bunch of catching up to do to {ggplot2}, but it's absolutely getting there.
+[Observable Plot](https://observablehq.com/collection/@observablehq/plot) specifications can be just as involved and complex as the most bespoke {ggplot2} plots in R. Observable Plot still has a bunch of catching up to do to {ggplot2}, but it's absolutely getting there.
 
 Like {ggplot2}, Plot has sensible defaults for pretty much everything. And, like {ggplot2}, you can give a geom (`mark` in Observable/Vega land) some data, and it'll do it's thing.
 
