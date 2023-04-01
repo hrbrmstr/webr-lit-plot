@@ -48,7 +48,7 @@ const dateArray = rDates.map(d => new Date(d))
 // go rando!
 async function randoCharts() {
 
-	const numbers = await R`runif(40, 150, 18)`
+	const numbers = await R`runif(40, 150, 180)`
 
 	doubleRes.results = numbers
 
