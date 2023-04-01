@@ -86,7 +86,7 @@ h4 {
 }
 
 pre {
-	font-size: calc(var(--font-size-base) * 1.05);
+	font-size: calc(var(--font-size-base) * 1.025);
 }
 
 pre,
