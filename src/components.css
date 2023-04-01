@@ -1,0 +1,4 @@
+button-with-raw-results {
+	--results-font-family: 'Comic Code Ligatures', monospace;
+	--results-color: rgba(var(--functional-green), 1);
+}

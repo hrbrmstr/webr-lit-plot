@@ -1,0 +1,31 @@
+import { defineConfig } from 'vite'
+import topLevelAwait from "vite-plugin-top-level-await";
+
+// https://vitejs.dev/config/
+export default defineConfig({
+	base: '/w/vite-webr-lit/', // change me for your deployment
+  build: {
+		lib: {
+			entry: 'index.html',
+      // entry: 'src/main.js',
+      formats: ['es'],
+    },
+    rollupOptions: {
+      // external: /^lit/,
+		},
+	},
+	plugins: [
+		topLevelAwait({
+			promiseExportName: "__tla",
+			promiseImportName: i => `__tla_${i}`
+		})
+	],
+	server: {
+		headers: {
+		"Cache-Control": "no-cache; max-age=1",
+    "Cross-Origin-Embedder-Policy": "require-corp",
+		"Cross-Origin-Opener-Policy": "same-origin",
+		"Cross-Origin-Resource-Policy": "cross-origin",
+		}
+	}
+})
