@@ -17,23 +17,23 @@ const foreground = style.getPropertyValue('--foreground-color');
 const background = style.getPropertyValue('--background-color');
 
 // identify all the plot components
-const chart1 = document.querySelector('#c1');
-const chart2 = document.querySelector('#c2');
-const chart3 = document.querySelector('#c3');
-const chart4 = document.querySelector('#c4');
-const chart5 = document.querySelector('#c5');
-const chart6 = document.querySelector('#c6');
-const chart7 = document.querySelector('#c7');
-const chart8 = document.querySelector('#c8');
+const cellXchart = document.querySelector('#cellX');
+const boxXchart = document.querySelector('#boxX');
+const lineYchart = document.querySelector('#lineY');
+const areaYchart = document.querySelector('#areaY');
+const rectYchart = document.querySelector('#rectY');
+const dotXchart = document.querySelector('#dotX');
+const lineChart = document.querySelector('#line');
+const dotChart = document.querySelector('#dot');
 
 // setup some different colors
-chart2.style = { backgroundColor: background, color: "#3a579a" }
-chart3.style = { backgroundColor: background, color: "#7e2453" }
-chart4.style = { backgroundColor: background, color: "#008751" }
-chart5.style = { backgroundColor: background, color: "#ff004d" }
-chart6.style = { backgroundColor: background, color: "#5f574e" }
-chart7.style = { backgroundColor: background, color: "#c2c3c7" }
-chart8.style = { backgroundColor: background, color: "#ffa300" }
+boxXchart.style = { backgroundColor: background, color: "#3a579a" }
+lineYchart.style = { backgroundColor: background, color: "#7e2453" }
+areaYchart.style = { backgroundColor: background, color: "#008751" }
+rectYchart.style = { backgroundColor: background, color: "#ff004d" }
+dotXchart.style = { backgroundColor: background, color: "#5f574e" }
+lineChart.style = { backgroundColor: background, color: "#c2c3c7" }
+dotChart.style = { backgroundColor: background, color: "#ffa300" }
 
 // find our number output areas\
 const doubleRes = document.querySelector('#r-doublres');
@@ -48,23 +48,23 @@ const dateArray = rDates.map(d => new Date(d))
 // go rando!
 async function randoCharts() {
 
-	const numbers = await R`runif(40, 150, 180)`
+	const numbers = await R`runif(40, 150, 18	0)`
 
 	doubleRes.results = numbers
 
-	chart1.chart = Plot.cellX(numbers)
-	chart2.chart = Plot.boxX(numbers)
-	chart3.chart = Plot.lineY(numbers)
-	chart4.chart = Plot.areaY(numbers, {})
-	chart5.chart = Plot.rectY(numbers)
-	chart6.chart = Plot.dotX(numbers)
+	cellXchart.chart = Plot.cellX(numbers)
+	boxXchart.chart = Plot.boxX(numbers)
+	lineYchart.chart = Plot.lineY(numbers)
+	areaYchart.chart = Plot.areaY(numbers, {})
+	rectYchart.chart = Plot.rectY(numbers)
+	dotXchart.chart = Plot.dotX(numbers)
 
 	const timeSeries = numbers.map((d, i) => {
 		return [ dateArray[i], d ]
 	})
 
-	chart7.chart = Plot.line(timeSeries)
-	chart8.chart = Plot.dot(timeSeries)
+	lineChart.chart = Plot.line(timeSeries)
+	dotChart.chart = Plot.dot(timeSeries)
 
 };
 

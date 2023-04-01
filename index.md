@@ -53,7 +53,7 @@ Some data, courtesy of `runif()`:
 
 <double-display id="r-doublres"></double-display>
 
-<ojs-shorthand-plot chartTitle="CellX Mark" id="c1"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="CellX Mark" id="cellX"></ojs-shorthand-plot>
 
 [Observable Plot](https://observablehq.com/collection/@observablehq/plot) specifications can be just as involved and complex as the most bespoke {ggplot2} plots in R. OBS Plot still has a bunch of catching up to do to {ggplot2}, but it's absolutely getting there.
 
@@ -82,13 +82,13 @@ It looks like what you see [in this cell](https://observablehq.com/@observablehq
 If you "view source" on the HTML page, all you're going to see is this (whitespace removed and one component moved for brevity/clarity):
 
 ```html
-<ojs-shorthand-plot chartTitle="BoxX Mark"  id="c2"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="LineY Mark" id="c3"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="AreaY Mark" id="c4"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="RectY Mark" id="c5"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="DotX Mark"  id="c6"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="Line Mark"  id="c7"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="Dot Mark"   id="c8"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="BoxX Mark"  id="boxX"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="LineY Mark" id="lineY"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="AreaY Mark" id="areaY"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="RectY Mark" id="rectY"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="DotX Mark"  id="dotX"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="Line Mark"  id="line"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="Dot Mark"   id="dot"></ojs-shorthand-plot>
 ```
 
 [Lit] Web Components keep HTML source pretty tidy.
@@ -102,41 +102,41 @@ I don't need to repeat the hard work of the Observable folks, so the various `ma
 If you look in `main.js`, you'll see how short the calls to Plot are:
 
 ```js
-chart1.chart = Plot.cellX(numbers)
-chart2.chart = Plot.lineY(numbers)
-chart3.chart = Plot.areaY(numbers, {})
-chart4.chart = Plot.rectY(numbers)
-chart5.chart = Plot.dotX(numbers)
-chart6.chart = Plot.boxX(numbers)
+cellXchart.chart = Plot.cellX(numbers)
+boxXchart.chart = Plot.boxX(numbers)
+lineYchart.chart = Plot.lineY(numbers)
+areaYchart.chart = Plot.areaY(numbers, {})
+rectYchart.chart = Plot.rectY(numbers)
+dotXchart.chart = Plot.dotX(numbers)
 ```
 
 Sure, I tweaked the colors a bit, but that's also not verbose:
 
 ```js
-chart2.style = { backgroundColor: background, color: "#3a579a" }
+boxXchart.style = { backgroundColor: background, color: "#3a579a" }
 ```
 
 I'll blather a bit further when you get to the two-dimensional charts.
 
-<ojs-shorthand-plot chartTitle="BoxX Mark"  id="c2"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="BoxX Mark"  id="boxX"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="LineY Mark" id="c3"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="LineY Mark" id="lineY"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="AreaY Mark" id="c4"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="AreaY Mark" id="areaY"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="RectY Mark" id="c5"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="RectY Mark" id="rectY"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="DotX Mark"  id="c6"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="DotX Mark"  id="dotX"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="Line Mark"  id="c7"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="Line Mark"  id="line"></ojs-shorthand-plot>
 
-<ojs-shorthand-plot chartTitle="Dot Mark"   id="c8"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="Dot Mark"   id="dot"></ojs-shorthand-plot>
 
 That `timeSeries` variable is fed into the Line and Dot mark plots. It's also really short:
 
 ```js
-chart7.chart = Plot.line(timeSeries)
-chart8.chart = Plot.dot(timeSeries)
+lineChart.chart = Plot.line(timeSeries)
+dotChart.chart = Plot.dot(timeSeries)
 ```
 
 Notice how it handles the date scale on the X axis. You can [read more about that](https://observablehq.com/@observablehq/plot-shorthand#cell-478) in the original notebook.
