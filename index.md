@@ -135,11 +135,11 @@ lineChart.chart = Plot.line(timeSeries)
 dotChart.chart = Plot.dot(timeSeries)
 ```
 
+<ojs-shorthand-plot chartTitle="Line Mark"  id="line"></ojs-shorthand-plot>
+
+<ojs-shorthand-plot chartTitle="Dot Mark"   id="dot"></ojs-shorthand-plot>
+
 Notice how it handles the date scale on the X axis. You can [read more about that](https://observablehq.com/@observablehq/plot-shorthand#cell-478) in the original notebook.
-
-<ojs-shorthand-plot chartTitle="Line Mark" id="c7"></ojs-shorthand-plot>
-
-<ojs-shorthand-plot chartTitle="Dot Mark" id="c8"></ojs-shorthand-plot>
 
 ## FIN
 
