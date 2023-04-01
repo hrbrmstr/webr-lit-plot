@@ -35,7 +35,7 @@
 
 html,
 body {
-	background: --background-color;
+	background: var(--background-color);
 	font-family: var(--font-family-base);
 	font-size: var(--font-size-base);
 	font-style: var(--font-style-base);
@@ -87,24 +87,24 @@ h4 {
 }
 
 pre {
-	font-family: --font-family-monospace;
-	font-size: calc(var(--font-size-base) * 1.025);
+	font-family: var(--font-family-monospace);
+	font-size: calc(var(--font-size-base) * 0.9);
 }
 
 pre,
 code {
-	font-family: --font-family-monospace;
-	font-size: calc(var(--font-size-base) * 1.025);
+	font-family: var(--font-family-monospace);
+	font-size: calc(var(--font-size-base) * 0.9);
   line-height: 1rem;
 }
 
 pre.shiki {
-	font-family: --font-family-monospace;
-	font-size: calc(var(--font-size-base) * 1.025);
+	font-family: var(--font-family-monospace);
+	font-size: calc(var(--font-size-base) * 0.9);
 	border: 1px solid gray;
 	overflow-x: auto;
 	overflow-y: scroll;
-	padding: 2rem;
+	padding: 1.25rem;
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 }
