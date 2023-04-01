@@ -60,7 +60,20 @@ export class OBSShorthandPlot extends LitElement {
 		super.connectedCallback();
 		inspect && console.log("connectedCallback")
 
+		const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+		prefersDarkMode.addEventListener('change', this.updateColorScheme.bind(this));
+
 	}
+
+	updateColorScheme(event) {
+		// Update the "dark" attribute of the host element based on the user's preferred color scheme
+		if (event.matches) {
+			this.setAttribute('dark', '');
+		} else {
+			this.removeAttribute('dark');
+		}
+	}
+
 
 	performUpdate() {
 
@@ -90,7 +103,10 @@ export class OBSShorthandPlot extends LitElement {
 				display: block;
 			}
 			:host svg {
-				background: --background-color;
+				background: var(--light-plot-background)
+			}
+			:host[dark] svg {
+				background: var(--dark-plot-background)
 			}
 		`
 	];

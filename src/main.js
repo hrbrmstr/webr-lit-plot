@@ -28,6 +28,7 @@ const lineChart  = document.querySelector('#line');
 const dotChart   = document.querySelector('#dot');
 
 // setup some different colors
+cellXchart.style = { backgroundColor: background, color: "#35b5ff" }
 boxXchart.style  = { backgroundColor: background, color: "#3a579a" }
 lineYchart.style = { backgroundColor: background, color: "#7e2453" }
 areaYchart.style = { backgroundColor: background, color: "#008751" }
@@ -74,3 +75,23 @@ apple_data + rnorm(length(apple_data), mean = 0, sd = 2)
 
 // just like 💎, this is forever, until we stop it
 const interval = setInterval(randoCharts, 1000);
+
+const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
+prefersDarkMode.addEventListener('change', (event) => {
+
+	const style = getComputedStyle(document.documentElement);
+	const foreground = style.getPropertyValue('--foreground-color');
+	const background = style.getPropertyValue('--background-color');
+
+	// setup some different colors
+	cellXchart.style = { backgroundColor: background, color: "#35b5ff" }
+	boxXchart.style = { backgroundColor: background, color: "#3a579a" }
+	lineYchart.style = { backgroundColor: background, color: "#7e2453" }
+	areaYchart.style = { backgroundColor: background, color: "#008751" }
+	rectYchart.style = { backgroundColor: background, color: "#ff004d" }
+	dotXchart.style = { backgroundColor: background, color: "#5f574e" }
+	lineChart.style = { backgroundColor: background, color: "#c2c3c7" }
+	dotChart.style = { backgroundColor: background, color: "#ffa300" }
+
+});
