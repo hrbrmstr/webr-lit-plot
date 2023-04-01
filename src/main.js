@@ -39,7 +39,10 @@ chart8.style = { backgroundColor: background, color: "#ffa300" }
 const doubleRes = document.querySelector('#r-doublres');
 
 // we'll let R make the dates for us, mostly
-const rDates = await R`as.character(seq.Date(as.Date("2018-01-02"), as.Date("2018-02-28"), "1 day"))`
+const rDates = await R`
+seq.Date(as.Date("2018-01-02"), as.Date("2018-02-28"), "1 day") |> 
+  as.character()
+`
 const dateArray = rDates.map(d => new Date(d))
 
 // go rando!
