@@ -18,7 +18,7 @@ export class DoubleDisplay extends LitElement {
 		return html`
 		  ${this.label} <img src=${rLogo} width="48" height="48" style="float:right; margin-right:20px;"/>
 		<div class="results-output" id="${this.id}-results">
-		<code>${this.results.map(d => d.toFixed(2)).join(", ")}</code>
+		${this.results.map(d => d.toFixed(2)).join(", ")}
 		</div>`
 	}
 
@@ -30,7 +30,6 @@ export class DoubleDisplay extends LitElement {
 			:host div.results-output {
 				color: var(--results-color);
 				font-family: var(--results-font-family);
-				color: var(--results-color);
 			}
 		`
 	];
