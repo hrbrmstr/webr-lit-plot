@@ -2,7 +2,7 @@
 # Good cheatsheet (https://cheatography.com/linux-china/cheat-sheets/justfile/)
 
 # project dir
-project := "something-bigger-and-better"
+project := "webr-lit-plot"
 	
 # where to sync ./build
 syncDest := "rud.is:~/rud.is/w/" + project + "/"

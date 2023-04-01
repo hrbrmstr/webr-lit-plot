@@ -1,5 +1,7 @@
 import './status-message.js'
-import './button-with-raw-results.js'
+import './obs-shorthand-plot.js'
+import './double-display.js'
+import * as Plot from "https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6/+esm";
 
 let webrMessage = document.getElementById("webr-status");
 webrMessage.text = ""
@@ -8,16 +10,53 @@ import './r.js'
 
 webrMessage.text = "WebR Loaded!"
 
-// find the web component; assign the callback; enable the component
-const rButton = document.querySelector('#r-button');
-rButton.onClick = async () => {
-	rButton.results = JSON.stringify(await R`sample(100, 5)`)
+const style = getComputedStyle(document.documentElement);
+const foreground = style.getPropertyValue('--foreground-color');
+const background = style.getPropertyValue('--background-color');
+
+const chart1 = document.querySelector('#c1');
+const chart2 = document.querySelector('#c2');
+const chart3 = document.querySelector('#c3');
+const chart4 = document.querySelector('#c4');
+const chart5 = document.querySelector('#c5');
+const chart6 = document.querySelector('#c6');
+const chart7 = document.querySelector('#c7');
+const chart8 = document.querySelector('#c8');
+
+chart2.style = { backgroundColor: background, color: "#3a579a" }
+chart3.style = { backgroundColor: background, color: "#7e2453" }
+chart4.style = { backgroundColor: background, color: "#008751" }
+chart5.style = { backgroundColor: background, color: "#ff004d" }
+chart6.style = { backgroundColor: background, color: "#5f574e" }
+chart7.style = { backgroundColor: background, color: "#c2c3c7" }
+chart8.style = { backgroundColor: background, color: "#ffa300" }
+
+const doubleRes = document.querySelector('#r-doublres');
+
+// we'll let R make the dates for us, mostly
+const rDates = await R`as.character(seq.Date(as.Date("2018-01-02"), as.Date("2018-02-28"), "1 day"))`
+const dateArray = rDates.map(d => new Date(d))
+
+async function randoCharts() {
+
+	const numbers = await R`runif(40, 150, 180)`
+
+	doubleRes.results = numbers
+
+	chart1.chart = Plot.cellX(numbers)
+	chart2.chart = Plot.lineY(numbers)
+	chart3.chart = Plot.areaY(numbers, {})
+	chart4.chart = Plot.rectY(numbers)
+	chart5.chart = Plot.dotX(numbers)
+	chart6.chart = Plot.boxX(numbers)
+
+	const timeSeries = numbers.map((d, i) => {
+		return [ dateArray[i], d ]
+	})
+
+	chart7.chart = Plot.line(timeSeries)
+	chart8.chart = Plot.dot(timeSeries)
+
 };
-rButton.disabled = false
 
-
-// for future use:
-//
-// let webPyMessage = document.getElementById("webpy-status");
-// import * as Py from "./py.js"; 
-// webPyMessage.text = "Pyodide Loaded!"
+setInterval(randoCharts, 1000);
