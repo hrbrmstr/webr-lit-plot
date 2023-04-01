@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import topLevelAwait from "vite-plugin-top-level-await";
+import webfontDownload from 'vite-plugin-webfont-dl';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,7 +19,8 @@ export default defineConfig({
 		topLevelAwait({
 			promiseExportName: "__tla",
 			promiseImportName: i => `__tla_${i}`
-		})
+		}),
+		webfontDownload(),
 	],
 	server: {
 		headers: {
