@@ -53,11 +53,11 @@ async function randoCharts() {
 	doubleRes.results = numbers
 
 	chart1.chart = Plot.cellX(numbers)
-	chart2.chart = Plot.lineY(numbers)
-	chart3.chart = Plot.areaY(numbers, {})
-	chart4.chart = Plot.rectY(numbers)
-	chart5.chart = Plot.dotX(numbers)
-	chart6.chart = Plot.boxX(numbers)
+	chart2.chart = Plot.boxX(numbers)
+	chart3.chart = Plot.lineY(numbers)
+	chart4.chart = Plot.areaY(numbers, {})
+	chart5.chart = Plot.rectY(numbers)
+	chart6.chart = Plot.dotX(numbers)
 
 	const timeSeries = numbers.map((d, i) => {
 		return [ dateArray[i], d ]

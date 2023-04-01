@@ -82,11 +82,11 @@ It looks like what you see [in this cell](https://observablehq.com/@observablehq
 If you "view source" on the HTML page, all you're going to see is this (whitespace removed and one component moved for brevity/clarity):
 
 ```html
-<ojs-shorthand-plot chartTitle="LineY Mark" id="c6"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="AreaY Mark" id="c2"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="RectY Mark" id="c3"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="DotX Mark"  id="c4"></ojs-shorthand-plot>
-<ojs-shorthand-plot chartTitle="BoxX Mark"  id="c5"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="BoxX Mark"  id="c2"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="LineY Mark" id="c3"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="AreaY Mark" id="c4"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="RectY Mark" id="c5"></ojs-shorthand-plot>
+<ojs-shorthand-plot chartTitle="DotX Mark"  id="c6"></ojs-shorthand-plot>
 <ojs-shorthand-plot chartTitle="Line Mark"  id="c7"></ojs-shorthand-plot>
 <ojs-shorthand-plot chartTitle="Dot Mark"   id="c8"></ojs-shorthand-plot>
 ```
