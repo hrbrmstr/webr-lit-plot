@@ -5,7 +5,7 @@
   "og" : {
     "site_name": "WebR Exeriments",
     "url": "https://rud.is/w/webr-lit-plot",
-    "description": "webr-lit-plot",
+    "description": "Using data from R to drive a whole lotta plottin'",
     "image": {
       "url": "https://rud.is/w/webr-lit-plot",
       "height": "1170",

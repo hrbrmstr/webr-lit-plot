@@ -16,7 +16,7 @@ export class DoubleDisplay extends LitElement {
 
 	render() {
 		return html`
-		  ${this.label} <img src=${rLogo} width="48" height="48" style="float:right; margin-right:20px;"/>
+		  ${this.label} <img alt="R logo" src=${rLogo} width="48" height="48" style="float:right; margin-right:20px;"/>
 		<div class="results-output" id="${this.id}-results">
 		${this.results.map(d => d.toFixed(2)).join(", ")}
 		</div>`
