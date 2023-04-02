@@ -79,7 +79,7 @@ _(If you can't tell, I'm still far more comfortable in R than in JavaScript and 
 
 It looks like what you see [in this cell](https://observablehq.com/@observablehq/plot-shorthand?collection=@observablehq/plot#timeSeries).
 
-If you "view source" on the HTML page, all you're going to see is this (whitespace removed and one component moved for brevity/clarity):
+If you "view source" on the HTML page, all you're going to see (apart from the color commentary and source code) is this (whitespace removed and one component moved for brevity/clarity):
 
 ```html
 <ojs-shorthand-plot chartTitle="BoxX Mark"  id="boxX"></ojs-shorthand-plot>
@@ -150,6 +150,8 @@ Note that we call the actual `.plot({…})` method in the component so it handle
 The component is really misnamed since you can use any OBS Plot in it, but I or you should do far more tweaking of it to ensure it will work for most cases.
 
 Even if we get speedier {ggplot2} load times, I think it'd be good for R folks to take Observable Plot for a spin in JS-land, and consider leaning _heavily_ on it for displaying most fundamental charts.
+
+Oh, and these "static" web pages [seem to do pretty well where Lighthouse is concerned](https://pagespeed.web.dev/analysis/https-rud-is-w-webr-lit-plot/4zg2reow30?form_factor=desktop).
 
 You can find the source [on GitHub](https://github.com/hrbrmstr/webr-lit-plot).
 
