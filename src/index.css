@@ -1,7 +1,50 @@
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-Bold.woff') format('woff');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-BoldItalic.woff') format('woff');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-Italic.woff') format('woff');
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-Medium.woff') format('woff');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-MediumItalic.woff') format('woff');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Comic Code Ligatures';
+	src: url('/fonts/ComicCodeLigatures-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: 'Comic Code Ligatures', sans-serif;
+}
+
 :root, * {
 	--font-size-base: 16px;
 	--font-family-base: 'Rubik', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	--font-family-monospace: 'JetBrains Mono', 'Fira Code', monospace;
+	--font-family-monospace: 'Comic Code Ligatures', 'JetBrains Mono', 'Fira Code', monospace;
 	--font-style-base: normal;
 	--body-1: --font-size-base;
 	--neutral-1: 0, 0, 0;
